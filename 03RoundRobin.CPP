@@ -58,8 +58,8 @@ void RoundRobin(int at[], int bt[], int n, int tq) {
 }
 
 int main() {
-  int at[] = {0, 1, 2};
-  int bt[] = {2, 3, 1};
+  int at[MAX] = {0, 1, 2};
+  int bt[MAX] = {2, 3, 1};
   int tq = 5;
   int n = sizeof(bt) / sizeof(bt[0]); 
 
