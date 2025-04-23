@@ -26,12 +26,15 @@ void BestFit(int np, int nb, int processes[], int partitions[], int partitionAll
 
 int main(){
   int nb = 5;
-  int partitions[] = {100,500,200,300,600};
+  int partitions[] = {100, 200, 300, 400, 450};
+
   int partitionAllocated[5] = {0};
 
   int np = 4;
-  int processes[] = {212, 417, 112, 426};
+
+  int processes[] = {412, 414, 450, 300};
 
   BestFit(np, nb, processes, partitions, partitionAllocated);
+  
   return 0;
 }
