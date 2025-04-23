@@ -5,22 +5,22 @@ using namespace std;
 void firstFitAllocation(int partitions[], int partitionAllocated[], int processes[], int nb, int np) {
     // Loop through each process to allocate memory
     for (int i = 0; i < np; i++) {
-        int allocatedIndex = -1; // Index of the partition where current process will be allocated
+        int index = -1; // Index of the partition where current process will be allocated
 
         // Try to find the first suitable partition for the current process
         for (int j = 0; j < nb; j++) {
             // Check if partition is not already allocated and has enough space
             if (partitionAllocated[j] == 0 && partitions[j] >= processes[i]) {
-                allocatedIndex = j;              // Allocate this partition
+                index = j;              // Allocate this partition
                 partitionAllocated[j] = 1;       // Mark the partition as allocated
                 break;                           // Stop searching after first fit
             }
         }
 
         // Output the result of allocation
-        if (allocatedIndex != -1) {
+        if (index != -1) {
             cout << "Process " << i + 1 << " allocated to partition of size " 
-                 << partitions[allocatedIndex] << endl;
+                 << partitions[index] << endl;
         } else {
             cout << "Process " << i + 1 << " cannot be allocated memory.\n";
         }
