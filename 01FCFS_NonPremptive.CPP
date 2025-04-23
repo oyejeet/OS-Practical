@@ -6,9 +6,17 @@ void FCFS(int at[], int bt[], int n) {
     
     // Calculate Completion Time (CT)
     ct[0] = at[0] + bt[0];
+    for(int i=0; i<n; i++){
+        cout << " p" << i+1 << "  ";
+    }
+    cout << endl;
+    cout<< at[0] << "  ";
+    cout << ct[0] << "  ";
     for (int i = 1; i < n; i++) {
         ct[i] = ct[i - 1] + bt[i];
+        cout << ct[i] <<"    ";
     }
+    cout << endl << endl;
 
     // Calculate Turn Around Time (TAT) = CT - AT
     for (int i = 0; i < n; i++)
